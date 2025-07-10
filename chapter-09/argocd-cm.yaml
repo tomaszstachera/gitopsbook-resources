@@ -2,11 +2,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-cm
+  namespace: argocd
   labels:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
 data:
-  url: https://<minikube-host>:<minikube-port>
+  url: https://192.168.72.4:31238
 
   dex.config: |
     connectors:
@@ -14,7 +15,6 @@ data:
         id: github
         name: GitHub
         config:
-          clientID: <client-id>
-          clientSecret: <client-secret>
-          loadAllGroups: true
-
+          clientID: Ov23lifG7a0TuMOlvQXI
+          clientSecret: 6efbf0bc1093f64cdf143fdb8f304f252405ece5
+        redirectURI: https://192.168.72.4:31238/api/dex/callback
