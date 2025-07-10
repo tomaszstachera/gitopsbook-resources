@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-patchesStrategicMerge:
-- argocd-cm.yaml
-- argocd-rbac-cm.yaml
-- argocd-server.yaml
+patches:
+- path: argocd-cm.yaml
+- path: argocd-rbac-cm.yaml
+- path: argocd-server.yaml
